@@ -1,0 +1,175 @@
+{
+    "data":[
+        {
+            "name":"Masemari",
+            "outlet":"Maharashtrian,Malwani",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Chinjabi",
+            "outlet":"North Indian, Chinese",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"D Palace",
+            "outlet":"Continential,Seafood",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very delicious food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        },
+        {
+            "name":"Shahi Paneer",
+            "outlet":"Rangla Punjab",
+            "description":"it is a very  tasty food",
+            "rating":"4.2",
+            "dish_type":"veg",
+            "delivery_time":"36 min",
+            "cost":"600 FOR TWO",
+            "coupons_available":"15% off on order above 249"
+        }
+        
+    ]
+}

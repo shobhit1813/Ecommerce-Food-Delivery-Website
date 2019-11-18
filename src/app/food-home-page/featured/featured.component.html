@@ -1,0 +1,12 @@
+<div class="featured-container" style="margin-top: 80px;" *ngIf="pageLoad === 'featuredlist'">
+    <h3><span class="label label-default">Featured Items</span></h3>
+    <mat-list>
+        <mat-list-item *ngFor="let list of featuredlist">
+            <span><a style="text-decoration: none;" [routerLink]="['/home', list]">{{list | titlecase}}</a></span>
+        </mat-list-item>
+    </mat-list>
+</div>
+
+<div style="width: 200px; height: 200px; background-color: red;" *ngIf="pageLoad === 'popular_brand'">
+
+</div>

@@ -1,0 +1,9 @@
+<div style="width: 300px; height: auto;">
+        <h2>Cart</h2>
+        <div  class="row" style="background-color:cornsilk; height: auto;width: 100%;" *ngFor="let item of cartItem">
+                <div class="col-md-4">{{item.name}}</div>
+                <div class="col-md-4">{{item.quantity}}</div>
+                <div class="col-md-4">{{item.price}}</div>
+        </div>
+        <div><button mat-stroked-button color="accent" style="width: 100%;">Checkout</button></div>
+</div>

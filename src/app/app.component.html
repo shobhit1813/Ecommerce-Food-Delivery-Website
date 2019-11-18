@@ -1,0 +1,19 @@
+<mat-toolbar class="mat-toolbar fixed-top">
+    <i class="fa fa-cutlery" aria-hidden="true" (click)="sidenav.toggle()"></i>
+    <div style="padding: 8px;cursor: pointer;" (click)="sidenav.toggle()">LetsEat</div>
+    <div style="margin-left:auto">Login</div>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" class="sideNav" #sidenav>
+        <a class="closebtn" (click)="sidenav.close()">x</a>
+        <a>Veg</a>
+        <a>Non-veg</a>
+        <a>Restaurants</a>
+    </mat-sidenav>
+        <mat-sidenav-content style="background:white">
+            <div class="main-container">
+                <app-filtercomponent></app-filtercomponent>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+</mat-sidenav-container>

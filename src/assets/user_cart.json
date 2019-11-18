@@ -1,0 +1,40 @@
+{
+    "items":[
+        {
+            "name":"Kebab",
+            "price":"234",
+            "customize":[
+                {
+                    "name":" extra cheese",
+                    "price":"23"
+                },
+                {
+                    "name":" extra spicy",
+                    "price":"45"
+                },
+                {
+                    "name":"sausage",
+                    "price":"40"
+                }
+            ]
+        },
+        {
+            "name":"Biryani",
+            "price":"234",
+            "customize":[
+                {
+                    "name":" extra cheese",
+                    "price":"23"
+                },
+                {
+                    "name":" extra spicy",
+                    "price":"45"
+                },
+                {
+                    "name":"sausage",
+                    "price":"40"
+                }
+            ]
+        }
+    ]
+}

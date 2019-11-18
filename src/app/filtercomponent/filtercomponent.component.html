@@ -1,0 +1,12 @@
+<div id="searchGroup" style="text-align: center;">
+    <form [formGroup]="searchGroup">
+        <input type="text" formControlName="search" [(ngModel)]="foodSearch" class="searchbar" placeholder="Search For Restaurants and Dishes..." [matAutocomplete]="auto">
+        <i class="fa fa-search" aria-hidden="true" (click)="searchRestaurantOrDish()"></i>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFood">
+        <mat-option *ngFor="let option of fiteredFoodOptions" [value]="foodOptions">
+            {{option.name}}
+        </mat-option> 
+    </mat-autocomplete>
+    </form>
+</div>
+     

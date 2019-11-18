@@ -1,0 +1,76 @@
+{
+    "load":"popular_brand",
+    "list":[
+        {
+            "name":"Bombli Fry",
+            "type":"starter",
+            "price":"315",
+            "description":"a delicious food",
+            "dish_type":"veg",
+            "customize":[
+                {
+                    "name":" extra cheese",
+                    "price":"23"
+                },
+                {
+                    "name":" extra spicy",
+                    "price":"45"
+                },
+                {
+                    "name":"sausage",
+                    "price":"40"
+                }
+            ]
+        },
+        {
+            "name":"Curries",
+            "type":"main course",
+            "price":"580",
+            "description":"a delicious food",
+            "dish_type":"veg",
+            "customize":[
+                {
+                    "name":" extra cheese",
+                    "price":"23"
+                },
+                {
+                    "name":" extra spicy",
+                    "price":"45"
+                },
+                {
+                    "name":"sausage",
+                    "price":"40"
+                }
+            ]
+        },
+        {
+            "name":"Surmai Curries",
+            "type":"Main Course",
+            "price":"515",
+            "description":"a delicious food",
+            "dish_type":"veg",
+            "customize":[
+                {
+                    "name":" extra cheese",
+                    "price":"23"
+                },
+                {
+                    "name":" extra spicy",
+                    "price":"45"
+                },
+                {
+                    "name":"sausage",
+                    "price":"40"
+                }
+            ]
+        },
+        {
+            "name":"chicken Fry",
+            "type":"starter",
+            "price":"480",
+            "description":"a delicious food",
+            "dish_type":"veg"
+        }
+    ],
+    "err_msg" : "Cannot bring required data"
+}

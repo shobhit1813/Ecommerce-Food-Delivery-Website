@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "name": "Shahi Paneer",
+            "type": "veg"
+        },
+        {
+            "name": "Malai Paneer",
+            "type": "veg"
+        },
+        {
+            "name": "Shahi Biryani",
+            "type": "non-veg"
+        },
+        {
+            "name": "Pulao",
+            "type": "veg"
+        },
+        {
+            "name": "Chicken Biryani",
+            "type": "non-veg"
+        },
+        {
+            "name": "Mutton Biryani",
+            "type": "non-veg"
+        }
+    ]
+}
