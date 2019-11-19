@@ -25,7 +25,7 @@ export class CustomDialogboxComponent implements OnInit {
       totalPrice+= parseInt(data);
     }) 
     this._dialogRef.close({
-        "name": this.data.name,
+        "name": this.data.item.name,
         "total_price" : totalPrice,
         "isCustomized": true
     })
