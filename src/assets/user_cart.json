@@ -3,36 +3,44 @@
         {
             "name":"Kebab",
             "price":"234",
+            "customized_price": "279",
             "customize":[
                 {
                     "name":" extra cheese",
-                    "price":"23"
+                    "price":"23",
+                    "isSelected":false
                 },
                 {
                     "name":" extra spicy",
-                    "price":"45"
+                    "price":"45",
+                    "isSelected":true
                 },
                 {
                     "name":"sausage",
-                    "price":"40"
+                    "price":"40",
+                    "isSelected":false
                 }
             ]
         },
         {
             "name":"Biryani",
             "price":"234",
+            "customized_price": "279",
             "customize":[
                 {
                     "name":" extra cheese",
-                    "price":"23"
+                    "price":"23",
+                    "isSelected":false
                 },
                 {
                     "name":" extra spicy",
-                    "price":"45"
+                    "price":"45",
+                    "isSelected":true
                 },
                 {
                     "name":"sausage",
-                    "price":"40"
+                    "price":"40",
+                    "isSelected":false
                 }
             ]
         }

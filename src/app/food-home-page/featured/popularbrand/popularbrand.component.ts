@@ -51,7 +51,7 @@ export class PopularbrandComponent implements OnInit {
       });
 
       customizeRef.afterClosed().subscribe(customizedValue => {
-        itemSelected.price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+        itemSelected.customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
         this.cartItem.push(itemSelected);
       });
     }

@@ -5,41 +5,49 @@
             "name":"Bombli Fry",
             "type":"starter",
             "price":"315",
+            "customized_price":"315",
             "description":"a delicious food",
             "dish_type":"veg",
             "customize":[
                 {
                     "name":" extra cheese",
-                    "price":"23"
+                    "price":"23",
+                    "isSelected":false
                 },
                 {
                     "name":" extra spicy",
-                    "price":"45"
+                    "price":"45",
+                    "isSelected":false
                 },
                 {
                     "name":"sausage",
-                    "price":"40"
+                    "price":"40",
+                    "isSelected":false
                 }
             ]
-        },
+        },  
         {
             "name":"Curries",
             "type":"main course",
             "price":"580",
+            "customized_price":"580",
             "description":"a delicious food",
             "dish_type":"veg",
             "customize":[
                 {
                     "name":" extra cheese",
-                    "price":"23"
+                    "price":"23",
+                    "isSelected":false
                 },
                 {
                     "name":" extra spicy",
-                    "price":"45"
+                    "price":"45",
+                    "isSelected":false
                 },
                 {
                     "name":"sausage",
-                    "price":"40"
+                    "price":"40",
+                    "isSelected":false
                 }
             ]
         },
@@ -47,20 +55,24 @@
             "name":"Surmai Curries",
             "type":"Main Course",
             "price":"515",
+            "customized_price":"515",
             "description":"a delicious food",
             "dish_type":"veg",
             "customize":[
                 {
                     "name":" extra cheese",
-                    "price":"23"
+                    "price":"23",
+                    "isSelected":false
                 },
                 {
                     "name":" extra spicy",
-                    "price":"45"
+                    "price":"45",
+                    "isSelected":false
                 },
                 {
                     "name":"sausage",
-                    "price":"40"
+                    "price":"40",
+                    "isSelected":false
                 }
             ]
         },
@@ -68,6 +80,7 @@
             "name":"chicken Fry",
             "type":"starter",
             "price":"480",
+            "customized_price":"480",
             "description":"a delicious food",
             "dish_type":"veg"
         }
