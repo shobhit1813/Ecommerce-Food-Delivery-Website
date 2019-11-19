@@ -35,14 +35,14 @@ export class PopularbrandComponent implements OnInit {
     if (this.cartItem.includes(itemSelected)) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
-        this.cartItem = data && data.message == 'Clear' ? this.cartItem = [] : this.openCustomizeOptionDialog(itemSelected);
+        this.cartItem = data && data.message == 'Clear' ? this.cartItem = this.cartItem : this.openCustomizeOptionDialog(itemSelected);
       })
     }
     else {
       this.openCustomizeOptionDialog(itemSelected);
     }
   }
-  
+
   openCustomizeOptionDialog(itemSelected) {
     if (itemSelected.customize !== undefined) {
       const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
