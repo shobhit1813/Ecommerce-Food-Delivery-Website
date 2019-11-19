@@ -35,28 +35,28 @@ export class PopularbrandComponent implements OnInit {
     if (this.cartItem.includes(itemSelected)) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
-        if (data && data.message == 'Clear') {
-          this.cartItem = [];
-        }
+        this.cartItem = data && data.message == 'Clear' ? this.cartItem = [] : this.openCustomizeOptionDialog(itemSelected);
       })
     }
     else {
-      if (itemSelected.customize !== undefined) {
-        const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
-          width: '500px',
-          data: { item: itemSelected, customize: itemSelected.customize }
-        });
-
-        customizeRef.afterClosed().subscribe(customizedValue => {
-          itemSelected.price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-          this.cartItem.push(itemSelected);
-        });
-      }
-      else {
-        this.cartItem.push(itemSelected);
-      }
-
+      this.openCustomizeOptionDialog(itemSelected);
     }
   }
+  openCustomizeOptionDialog(itemSelected){
+    if (itemSelected.customize !== undefined) {
+      const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
+        width: '500px',
+        data: { item: itemSelected, customize: itemSelected.customize }
+      });
 
+      customizeRef.afterClosed().subscribe(customizedValue => {
+        itemSelected.price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+        this.cartItem.push(itemSelected);
+      });
+    }
+    else {
+      this.cartItem.push(itemSelected);
+    }
+    return this.cartItem;
+  }
 }
