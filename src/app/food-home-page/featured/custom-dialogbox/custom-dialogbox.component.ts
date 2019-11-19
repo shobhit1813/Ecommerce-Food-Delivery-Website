@@ -16,17 +16,21 @@ export class CustomDialogboxComponent implements OnInit {
   }
 
   selectedOption(event: Event, optionSelected) {
-    this.customizedDetail.push(optionSelected.price);
+    this.customizedDetail.push(optionSelected);
   }
 
   addSelectedOption() {
     let totalPrice = 0;
+    let selectedOptionString = '';
     this.customizedDetail.forEach((data)=>{
-      totalPrice+= parseInt(data);
+      totalPrice+= parseInt(data.price);
+      selectedOptionString += data.name + ',';
     }) 
+    console.log(selectedOptionString);
     this._dialogRef.close({
         "name": this.data.item.name,
         "total_price" : totalPrice,
+        "selectiodOptions":selectedOptionString,
         "isCustomized": true
     })
   }
