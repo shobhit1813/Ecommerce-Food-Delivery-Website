@@ -42,7 +42,8 @@ export class PopularbrandComponent implements OnInit {
       this.openCustomizeOptionDialog(itemSelected);
     }
   }
-  openCustomizeOptionDialog(itemSelected){
+  
+  openCustomizeOptionDialog(itemSelected) {
     if (itemSelected.customize !== undefined) {
       const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
         width: '500px',
@@ -50,8 +51,9 @@ export class PopularbrandComponent implements OnInit {
       });
 
       customizeRef.afterClosed().subscribe(customizedValue => {
-        itemSelected.price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(itemSelected);
+        const tmpItemSelected = itemSelected;
+        tmpItemSelected.price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+        this.cartItem.push(tmpItemSelected);
       });
     }
     else {
