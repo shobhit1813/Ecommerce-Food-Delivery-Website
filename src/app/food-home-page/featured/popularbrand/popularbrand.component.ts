@@ -32,27 +32,28 @@ export class PopularbrandComponent implements OnInit {
   }
 
   addedItemToCart(itemSelected) {
-    if (this.cartItem.includes(itemSelected)) {
+    if ( this.cartItem !== undefined && this.cartItem.includes(itemSelected)) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
-        this.cartItem = data && data.message == 'Clear' ? this.cartItem = this.cartItem : this.openCustomizeOptionDialog(itemSelected);
+        this.cartItem = data && data.message == 'no' ? this.cartItem = this.cartItem : this.openCustomizeOptionDialog(itemSelected);
       })
     }
     else {
       this.openCustomizeOptionDialog(itemSelected);
-    }
+  }
   }
 
   openCustomizeOptionDialog(itemSelected) {
-    if (itemSelected.customize !== undefined) {
+    if (itemSelected !== undefined && itemSelected.customize !== undefined) {
       const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
         width: '500px',
         data: { item: itemSelected, customize: itemSelected.customize }
       });
 
       customizeRef.afterClosed().subscribe(customizedValue => {
-        itemSelected.customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(itemSelected);
+        let detailedObject = '{"name":"'+customizedValue.name+'","customized_price":"'+parseInt(itemSelected.price) + parseInt(customizedValue.total_price)+'"}'
+        this.cartItem.push(detailedObject);
+        console.log("the cart element is"+this.cartItem);
       });
     }
     else {

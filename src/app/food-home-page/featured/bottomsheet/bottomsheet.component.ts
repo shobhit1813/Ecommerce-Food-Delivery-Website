@@ -13,16 +13,16 @@ export class BottomsheetComponent implements OnInit {
   ngOnInit() {
   }
 
-  clearBar(): void {
+  repeatLast(): void {
     this.bottomSheetRef.dismiss({
-      message: 'Cancel',
+      message: 'no',
     });
     event.preventDefault();
   }
 
-  clearCart() {
+  customizeAgain() {
     this.bottomSheetRef.dismiss({
-      message: 'Clear'
+      message: 'yes'
     });
   }
 
