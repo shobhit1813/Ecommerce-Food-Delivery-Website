@@ -17,7 +17,7 @@ export class FoodCardComponent implements OnInit {
   defaultElevation = 2;
   raisedElevation = 8;
   ngOnInit() {
-    console.log("the cart is needed or not " + this.isCartNeeded);
+  
   }
 
   onCardClick(event: MouseEvent) {

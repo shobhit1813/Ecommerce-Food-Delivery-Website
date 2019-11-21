@@ -38,7 +38,6 @@ export class FiltercomponentComponent implements OnInit {
   filterFood(food: string): any[] {
     if (!food)
       return [];
-      console.log("The food options are :: FoodOptions = :: && food searched is ::",this.foodOptions,food);
     return this.foodOptions.filter(option => option.name.toLowerCase().includes(food.toLowerCase()));
   }
 
