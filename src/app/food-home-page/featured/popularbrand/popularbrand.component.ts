@@ -53,7 +53,6 @@ export class PopularbrandComponent implements OnInit {
       customizeRef.afterClosed().subscribe(customizedValue => {
         const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
         this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"'+customizedValue.selectiodOptions+'"}'));
-        console.log("the cart element is" + typeof this.cartItem[2]);
       });
     }
     else {
