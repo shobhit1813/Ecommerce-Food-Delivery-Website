@@ -2,10 +2,12 @@
     "items":[
         {
             "name":"Shahi Paneer",
+            "customized_options":"",
             "customized_price":"234"
         },
         {
             "name":"Paneer Do Pyaza",
+            "customized_options":"",
             "customized_price":"450"
         }
     ]
