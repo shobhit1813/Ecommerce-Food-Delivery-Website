@@ -27,7 +27,7 @@ export class PopularbrandComponent implements OnInit {
     })
 
     this.service.getCartItems().subscribe((data) => {
-      this.cartItem = data.items;
+      this.cartItem = data.items; 
     })
   }
 
@@ -52,7 +52,7 @@ export class PopularbrandComponent implements OnInit {
 
       customizeRef.afterClosed().subscribe(customizedValue => {
         const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"'+customizedValue.selectiodOptions+'"}'));
+        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"' + customizedValue.selectedOptions +'"}'));
       });
     }
     else {
