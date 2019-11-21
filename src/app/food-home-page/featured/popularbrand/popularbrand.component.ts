@@ -32,7 +32,7 @@ export class PopularbrandComponent implements OnInit {
   }
 
   addedItemToCart(itemSelected) {
-    if ( this.cartItem !== undefined && this.cartItem.includes(itemSelected)) {
+    if ( this.cartItem !== undefined && this.cartItem.includes(itemSelected.name)) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
         this.cartItem = data && data.message == 'no' ? this.cartItem = this.cartItem : this.openCustomizeOptionDialog(itemSelected);
@@ -51,9 +51,11 @@ export class PopularbrandComponent implements OnInit {
       });
 
       customizeRef.afterClosed().subscribe(customizedValue => {
-        let detailedObject = '{"name":"'+customizedValue.name+'","customized_price":"'+parseInt(itemSelected.price) + parseInt(customizedValue.total_price)+'"}'
+        const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+        let detailedObject = '{"name":"'+customizedValue.name+'","customized_price":"'+customized_price+'"}';
+        detailedObject = JSON.parse(detailedObject);
         this.cartItem.push(detailedObject);
-        console.log("the cart element is"+this.cartItem);
+        console.log("the cart element is"+typeof this.cartItem[2]);
       });
     }
     else {
@@ -62,3 +64,52 @@ export class PopularbrandComponent implements OnInit {
     return this.cartItem;
   }
 }
+
+// {
+//   "items":[
+//       {
+//           "name":"Kebab",
+//           "price":"234",
+//           "customized_price": "279",
+//           "customize":[
+//               {
+//                   "name":" extra cheese",
+//                   "price":"23",
+//                   "isSelected":false
+//               },
+//               {
+//                   "name":" extra spicy",
+//                   "price":"45",
+//                   "isSelected":true
+//               },
+//               {
+//                   "name":"sausage",
+//                   "price":"40",
+//                   "isSelected":false
+//               }
+//           ]
+//       },
+//       {
+//           "name":"Biryani",
+//           "price":"234",
+//           "customized_price": "279",
+//           "customize":[
+//               {
+//                   "name":" extra cheese",
+//                   "price":"23",
+//                   "isSelected":false
+//               },
+//               {
+//                   "name":" extra spicy",
+//                   "price":"45",
+//                   "isSelected":true
+//               },
+//               {
+//                   "name":"sausage",
+//                   "price":"40",
+//                   "isSelected":false
+//               }
+//           ]
+//       }
+//   ]
+// }
