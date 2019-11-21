@@ -32,7 +32,7 @@ export class PopularbrandComponent implements OnInit {
   }
 
   addedItemToCart(itemSelected) {
-    if ( this.cartItem !== undefined && this.cartItem.includes(itemSelected.name)) {
+    if (this.cartItem !== undefined && this.cartItem.filter(data => data.name === itemSelected.name).length > 0) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
         this.cartItem = data && data.message == 'no' ? this.cartItem = this.cartItem : this.openCustomizeOptionDialog(itemSelected);
@@ -40,7 +40,7 @@ export class PopularbrandComponent implements OnInit {
     }
     else {
       this.openCustomizeOptionDialog(itemSelected);
-  }
+    }
   }
 
   openCustomizeOptionDialog(itemSelected) {
@@ -52,10 +52,8 @@ export class PopularbrandComponent implements OnInit {
 
       customizeRef.afterClosed().subscribe(customizedValue => {
         const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        let detailedObject = '{"name":"'+customizedValue.name+'","customized_price":"'+customized_price+'"}';
-        detailedObject = JSON.parse(detailedObject);
-        this.cartItem.push(detailedObject);
-        console.log("the cart element is"+typeof this.cartItem[2]);
+        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"'+customizedValue.selectiodOptions+'"}'));
+        console.log("the cart element is" + typeof this.cartItem[2]);
       });
     }
     else {
