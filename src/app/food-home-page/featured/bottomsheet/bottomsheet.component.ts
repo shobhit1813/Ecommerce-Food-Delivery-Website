@@ -25,6 +25,4 @@ export class BottomsheetComponent implements OnInit {
       message: 'choose'
     });
   }
-
-
 }

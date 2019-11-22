@@ -11,13 +11,13 @@ import { BottomsheetComponent } from '../bottomsheet/bottomsheet.component';
   styleUrls: ['./popularbrand.component.css']
 })
 export class PopularbrandComponent implements OnInit {
-
+  
   popularBrandList: any[];
   isCartNeeded: boolean;
-  isRestaurant: boolean = true;
   cartItem: any[];
+  isRestaurant: boolean = true;
   constructor(private service: FoodServiceService, private _customizeDialog: MatDialog, private _bottomSheet: MatBottomSheet) { }
-
+  
   ngOnInit() {
     this.service.getPopularBrand().subscribe((data) => {
       if (data !== undefined && data.length !== 0) {
