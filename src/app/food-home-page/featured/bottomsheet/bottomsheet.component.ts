@@ -15,14 +15,14 @@ export class BottomsheetComponent implements OnInit {
 
   repeatLast(): void {
     this.bottomSheetRef.dismiss({
-      message: 'no',
+      message: 'repeat',
     });
     event.preventDefault();
   }
 
   customizeAgain() {
     this.bottomSheetRef.dismiss({
-      message: 'yes'
+      message: 'choose'
     });
   }
 
