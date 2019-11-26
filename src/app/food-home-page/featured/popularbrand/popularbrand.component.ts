@@ -15,6 +15,7 @@ export class PopularbrandComponent implements OnInit {
   popularBrandList: any[];
   isCartNeeded: boolean;
   cartItem: any[];
+  noOfItems:number;
   isRestaurant: boolean = true;
   constructor(private service: FoodServiceService, private _customizeDialog: MatDialog, private _bottomSheet: MatBottomSheet) { }
   
@@ -22,6 +23,7 @@ export class PopularbrandComponent implements OnInit {
     this.service.getPopularBrand().subscribe((data) => {
       if (data !== undefined && data.length !== 0) {
         this.popularBrandList = data.list;
+        this.noOfItems = this.popularBrandList.length;
         this.isCartNeeded = true;
       }
     })
@@ -44,7 +46,6 @@ export class PopularbrandComponent implements OnInit {
   }
 
   repeatLastOrder(itemSelected){
-    console.log("inside repeat order function");
     this.cartItem.filter((data,index) =>{
       if(data.name === itemSelected.name){
         return this.cartItem.push(this.cartItem[index]);  
@@ -52,6 +53,7 @@ export class PopularbrandComponent implements OnInit {
     })
     return this.cartItem;
   }
+
   openCustomizeOptionDialog(itemSelected) {
     if (itemSelected !== undefined && itemSelected.customize !== undefined) {
       const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {

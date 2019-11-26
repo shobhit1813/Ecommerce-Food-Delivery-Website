@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { FoodServiceService } from '../services/food-service.service';
 
 @Component({
@@ -6,19 +6,19 @@ import { FoodServiceService } from '../services/food-service.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnChanges {
 
   @Input() items: any[];
   @Input() isCartNeeded: boolean;
   @Input() cartItem: any[];
-  subtotalPrice: number;
+  subtotalPrice: number = 0;
   constructor(private service: FoodServiceService) {
   }
 
-  ngOnInit() {
-    if (this.cartItem != undefined) {
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['cartItem'].currentValue !== undefined) {
       this.cartItem.forEach(data => {
-        this.subtotalPrice += data.customized_price;
+        this.subtotalPrice += parseInt(data.customized_price);
         console.log("the price of order is " + this.subtotalPrice);
       });
     }
