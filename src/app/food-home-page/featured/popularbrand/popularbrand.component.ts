@@ -48,10 +48,13 @@ export class PopularbrandComponent implements OnInit {
   repeatLastOrder(itemSelected){
     this.cartItem.filter((data,index) =>{
       if(data.name === itemSelected.name){
-        return this.cartItem.push(this.cartItem[index]);  
+        this.cartItem.push(this.cartItem[index]);
+        this.cartItem = this.cartItem.slice();
+        return this.cartItem;
       }
     })
-    return this.cartItem;
+        this.cartItem = this.cartItem.slice();
+        return this.cartItem;
   }
 
   openCustomizeOptionDialog(itemSelected) {
@@ -69,6 +72,7 @@ export class PopularbrandComponent implements OnInit {
     else {
       this.cartItem.push(itemSelected);
     }
-    return this.cartItem;
+        this.cartItem = this.cartItem.slice();
+        return this.cartItem;
   }
 }
