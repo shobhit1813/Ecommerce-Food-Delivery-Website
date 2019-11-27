@@ -60,7 +60,6 @@ export class PopularbrandComponent implements OnInit {
         width: '500px',
         data: { item: itemSelected, customize: itemSelected.customize }
       });
-
       customizeRef.afterClosed().subscribe(customizedValue => {
         const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
         this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
@@ -72,3 +71,4 @@ export class PopularbrandComponent implements OnInit {
     return this.cartItem;
   }
 }
+// https://stackoverflow.com/questions/43223582/why-angular-2-ngonchanges-not-responding-to-input-array-push

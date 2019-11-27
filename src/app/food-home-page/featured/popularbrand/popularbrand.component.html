@@ -3,10 +3,13 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-9 col-xs-9">
-      <app-food-card [foodWorkload]="popularBrandList" [isCartNeeded]="isCartNeeded" (addToCart)="addedItemToCart($event)"></app-food-card>
+      <app-food-card [foodWorkload]="popularBrandList" [isCartNeeded]="isCartNeeded"
+        (addToCart)="addedItemToCart($event)"></app-food-card>
     </div>
     <div class="col-sm-3 col-xs-3">
-    <app-cart [items] ="addedItems" [isCartNeeded]="isCartNeeded" [cartItem]="cartItem"></app-cart>
+      <!-- <app-cart [items] ="addedItems" [isCartNeeded]="isCartNeeded" [cartItem]="cartItem"></app-cart> -->
+      <app-cart [items]="addedItems" [isCartNeeded]="isCartNeeded"
+        [cartItem]="{trackBy:cartItem.length,cartItem:cartItem}"></app-cart> 
     </div>
   </div>
 </div>

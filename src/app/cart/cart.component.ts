@@ -16,12 +16,13 @@ export class CartComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['cartItem'].currentValue !== undefined) {
-      this.cartItem.forEach(data => {
-        this.subtotalPrice += parseInt(data.customized_price);
-      });
-    }
-    console.log(changes['cartItem']);
+      let cartItem = changes.cartItem;
+    // if (changes['cartItem'].currentValue != undefined) {
+    //   this.cartItem.forEach(data => {
+    //     this.subtotalPrice += parseInt(data.customized_price);
+    //   });
+    // }
+    console.log("the previous value is ",cartItem.currentValue);
   }
 
 
