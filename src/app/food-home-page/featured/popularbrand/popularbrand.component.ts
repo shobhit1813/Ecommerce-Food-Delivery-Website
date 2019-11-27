@@ -11,14 +11,14 @@ import { BottomsheetComponent } from '../bottomsheet/bottomsheet.component';
   styleUrls: ['./popularbrand.component.css']
 })
 export class PopularbrandComponent implements OnInit {
-  
+
   popularBrandList: any[];
   isCartNeeded: boolean;
   cartItem: any[];
-  noOfItems:number;
+  noOfItems: number;
   isRestaurant: boolean = true;
   constructor(private service: FoodServiceService, private _customizeDialog: MatDialog, private _bottomSheet: MatBottomSheet) { }
-  
+
   ngOnInit() {
     this.service.getPopularBrand().subscribe((data) => {
       if (data !== undefined && data.length !== 0) {
@@ -38,7 +38,6 @@ export class PopularbrandComponent implements OnInit {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
         this.cartItem = data && data.message !== 'choose' ? this.repeatLastOrder(itemSelected) : this.openCustomizeOptionDialog(itemSelected);
-        this.cartItem = this.cartItem.slice();
       })
     }
     else {
@@ -46,10 +45,10 @@ export class PopularbrandComponent implements OnInit {
     }
   }
 
-  repeatLastOrder(itemSelected){
-    this.cartItem.filter((data,index) =>{
-      if(data.name === itemSelected.name){
-        return this.cartItem.push(this.cartItem[index]);  
+  repeatLastOrder(itemSelected) {
+    this.cartItem.filter((data, index) => {
+      if (data.name === itemSelected.name) {
+        return this.cartItem.push(this.cartItem[index]);
       }
     })
     return this.cartItem;

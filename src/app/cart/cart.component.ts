@@ -19,9 +19,9 @@ export class CartComponent implements OnChanges {
     if (changes['cartItem'].currentValue !== undefined) {
       this.cartItem.forEach(data => {
         this.subtotalPrice += parseInt(data.customized_price);
-        console.log("the price of order is " + this.subtotalPrice);
       });
     }
+    console.log(changes['cartItem']);
   }
 
 
