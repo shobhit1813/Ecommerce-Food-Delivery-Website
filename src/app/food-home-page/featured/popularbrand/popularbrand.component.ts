@@ -37,7 +37,8 @@ export class PopularbrandComponent implements OnInit {
     if (this.cartItem !== undefined && this.cartItem.filter(data => data.name === itemSelected.name).length > 0) {
       const bottomSheetRef = this._bottomSheet.open(BottomsheetComponent);
       bottomSheetRef.afterDismissed().subscribe((data) => {
-        this.cartItem = data && data.message !== 'choose' ? this.cartItem = this.repeatLastOrder(itemSelected) : this.openCustomizeOptionDialog(itemSelected);
+        this.cartItem = data && data.message !== 'choose' ? this.repeatLastOrder(itemSelected) : this.openCustomizeOptionDialog(itemSelected);
+        this.cartItem = this.cartItem.slice();
       })
     }
     else {
@@ -48,13 +49,10 @@ export class PopularbrandComponent implements OnInit {
   repeatLastOrder(itemSelected){
     this.cartItem.filter((data,index) =>{
       if(data.name === itemSelected.name){
-        this.cartItem.push(this.cartItem[index]);
-        this.cartItem = this.cartItem.slice();
-        return this.cartItem;
+        return this.cartItem.push(this.cartItem[index]);  
       }
     })
-        this.cartItem = this.cartItem.slice();
-        return this.cartItem;
+    return this.cartItem;
   }
 
   openCustomizeOptionDialog(itemSelected) {
@@ -72,7 +70,6 @@ export class PopularbrandComponent implements OnInit {
     else {
       this.cartItem.push(itemSelected);
     }
-        this.cartItem = this.cartItem.slice();
-        return this.cartItem;
+    return this.cartItem;
   }
 }
