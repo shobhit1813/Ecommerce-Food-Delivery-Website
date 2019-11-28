@@ -13,18 +13,15 @@ export class CartComponent implements OnChanges {
   @Input() isCartNeeded: boolean;
   @Input() cartItem: any;
   subtotalPrice: number = 0;
-  constructor(private service: FoodServiceService, private route:Router) {
+  constructor(private service: FoodServiceService, private route: Router) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['cartItem'].currentValue !=changes['cartItem'].previousValue) {
+    if (changes['cartItem'].currentValue != changes['cartItem'].previousValue) {
       this.subtotalPrice = 0;
       this.cartItem.cartItem.forEach(data => {
         this.subtotalPrice += parseInt(data.customized_price);
       });
     }
   }
-
-
-
 }
