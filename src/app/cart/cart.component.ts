@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { FoodServiceService } from '../services/food-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,7 @@ export class CartComponent implements OnChanges {
   @Input() isCartNeeded: boolean;
   @Input() cartItem: any;
   subtotalPrice: number = 0;
-  constructor(private service: FoodServiceService) {
+  constructor(private service: FoodServiceService, private route:Router) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -22,7 +23,6 @@ export class CartComponent implements OnChanges {
         this.subtotalPrice += parseInt(data.customized_price);
       });
     }
-    // console.log("the previous value is ",changes['cartItem'].previousValue !== changes['cartItem'].currentValue);
   }
 
 

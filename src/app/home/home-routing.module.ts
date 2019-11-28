@@ -20,6 +20,7 @@ const routes: Routes = [
       { path: 'popular-brand', component: PopularbrandComponent, pathMatch: 'full' },
       { path: 'offers-near-you', component: OffernearyouComponent, pathMatch: 'full' },
       { path: 'only-on-lets-eat', component: OnlyletseatproductComponent, pathMatch: 'full' },
+      { path: 'checkout', component: PageNotFoundComponent },
       { path: 'pocket-friendly', component: PocketfriendlyComponent, pathMatch: 'full' },
       { path: 'trending', component: WhatsnewComponent, pathMatch: 'full' },
       { path: 'meal-box', component: MealboxComponent, pathMatch: 'full' },
