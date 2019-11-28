@@ -10,19 +10,19 @@ export class CartComponent implements OnChanges {
 
   @Input() items: any[];
   @Input() isCartNeeded: boolean;
-  @Input() cartItem: any[];
+  @Input() cartItem: any;
   subtotalPrice: number = 0;
   constructor(private service: FoodServiceService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-      let cartItem = changes.cartItem;
-    // if (changes['cartItem'].currentValue != undefined) {
-    //   this.cartItem.forEach(data => {
-    //     this.subtotalPrice += parseInt(data.customized_price);
-    //   });
-    // }
-    console.log("the previous value is ",cartItem.currentValue);
+    if (changes['cartItem'].currentValue !=changes['cartItem'].previousValue) {
+      this.subtotalPrice = 0;
+      this.cartItem.cartItem.forEach(data => {
+        this.subtotalPrice += parseInt(data.customized_price);
+      });
+    }
+    // console.log("the previous value is ",changes['cartItem'].previousValue !== changes['cartItem'].currentValue);
   }
 
 
