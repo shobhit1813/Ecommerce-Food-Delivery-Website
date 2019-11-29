@@ -8,8 +8,8 @@ import { PocketfriendlyComponent } from '../food-home-page/featured/pocketfriend
 import { WhatsnewComponent } from '../food-home-page/featured/whatsnew/whatsnew.component';
 import { MealboxComponent } from '../food-home-page/featured/mealbox/mealbox.component';
 import { PageNotFoundComponent } from '../food-home-page/featured/page-not-found/page-not-found.component';
-import { FoodCardComponent } from '../food-home-page/food-card/food-card.component';
 import { FoodHomePageComponent } from '../food-home-page/food-home-page.component';
+import { CheckoutComponent } from '../food-home-page/checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'popular-brand', component: PopularbrandComponent, pathMatch: 'full' },
       { path: 'offers-near-you', component: OffernearyouComponent, pathMatch: 'full' },
       { path: 'only-on-lets-eat', component: OnlyletseatproductComponent, pathMatch: 'full' },
-      { path: 'checkout', component: PageNotFoundComponent },
+      { path: 'checkout', component: CheckoutComponent },
       { path: 'pocket-friendly', component: PocketfriendlyComponent, pathMatch: 'full' },
       { path: 'trending', component: WhatsnewComponent, pathMatch: 'full' },
       { path: 'meal-box', component: MealboxComponent, pathMatch: 'full' },

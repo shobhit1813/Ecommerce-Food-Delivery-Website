@@ -33,6 +33,7 @@ import { CartComponent } from './cart/cart.component';
 import { CustomDialogboxComponent } from './food-home-page/featured/custom-dialogbox/custom-dialogbox.component';
 import {MatDialogModule} from '@angular/material';
 import { BottomsheetComponent } from './food-home-page/featured/bottomsheet/bottomsheet.component';
+import { CheckoutComponent } from './food-home-page/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { BottomsheetComponent } from './food-home-page/featured/bottomsheet/bott
     PageNotFoundComponent,
     CartComponent,
     CustomDialogboxComponent,
-    BottomsheetComponent
+    BottomsheetComponent,
+    CheckoutComponent
   ],
   imports: [
     AlertModule.forRoot(),
