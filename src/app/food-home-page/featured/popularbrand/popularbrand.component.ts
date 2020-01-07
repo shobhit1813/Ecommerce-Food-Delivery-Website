@@ -48,6 +48,8 @@ export class PopularbrandComponent implements OnInit {
   repeatLastOrder(itemSelected) {
     this.cartItem.filter((data, index) => {
       if (data.name === itemSelected.name) {
+        console.log("the item selected is ", itemSelected.quantity);
+        itemSelected.quantity++;
         return this.cartItem.push(this.cartItem[index]);
       }
     })
@@ -62,7 +64,7 @@ export class PopularbrandComponent implements OnInit {
       });
       customizeRef.afterClosed().subscribe(customizedValue => {
         const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
+        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + 2 + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
       });
     }
     else {

@@ -3,11 +3,12 @@
         <div  class="row" style="background-color:cornsilk; height: auto;width: 100%;" *ngFor="let item of cartItem.cartItem">
                 <div class="col-md-4">{{item.name}}</div>
                 <div class="col-md-4">{{item.customized_options}}</div>
-                <div class="col-md-4">{{item.customized_price}}</div>
+                <div class="col-md-2">{{item.quantity}}</div>
+                <div class="col-md-2">{{item.customized_price}}</div>
         </div>
         <div class="row">
                 <div class="col-md-7"><h4>Subtotal</h4></div>
-                <div class="col-md-5" style="margin-top: 5px;"><span style="margin-left: 7px;">{{subtotalPrice}}</span></div>
+                <div class="col-md-5" style="margin-top: 5px;"><span style="margin-left: 50px;">{{subtotalPrice}}</span></div>
         </div>
         <div><button mat-stroked-button  style="width: 100%;background-color:#4ce600;"(click)="this.route.navigate(['/home/checkout'])"><span style="color:#FFFFFF">CHECKOUT</span></button></div>
 </div>
