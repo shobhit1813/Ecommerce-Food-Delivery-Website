@@ -28,6 +28,7 @@ export class CustomDialogboxComponent implements OnInit {
     })
     this._dialogRef.close({
       "name": this.data.item.name,
+      "quantity":this.data.item.quantity,
       "total_price": totalPrice,
       "selectedOptions": selectedOptionString,
       "isCustomized": true

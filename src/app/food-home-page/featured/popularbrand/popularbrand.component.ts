@@ -63,14 +63,26 @@ export class PopularbrandComponent implements OnInit {
         data: { item: itemSelected, customize: itemSelected.customize }
       });
       customizeRef.afterClosed().subscribe(customizedValue => {
-        const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + 2 + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
-      });
+        this.cartItem.filter((data) => {
+          if (customizedValue.name === data.name && customizedValue.selectedOptions === data.customized_options) {
+            console.log("inisde if Condition");
+            data.quantity++;
+          }
+          else {
+            console.log("in else condition");
+            const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+            this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + customizedValue.quantity + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
+          }
+        })
+      }
+      )
     }
     else {
+      console.log("in outer else")
       this.cartItem.push(itemSelected);
     }
     return this.cartItem;
   }
+
 }
 // https://stackoverflow.com/questions/43223582/why-angular-2-ngonchanges-not-responding-to-input-array-push
