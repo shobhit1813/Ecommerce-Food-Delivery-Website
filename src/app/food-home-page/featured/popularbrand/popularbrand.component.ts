@@ -58,24 +58,16 @@ export class PopularbrandComponent implements OnInit {
 
   openCustomizeOptionDialog(itemSelected) {
     if (itemSelected !== undefined && itemSelected.customize !== undefined) {
+      itemSelected.quantity = parseInt(itemSelected.quantity) + 1;
       const customizeRef = this._customizeDialog.open(CustomDialogboxComponent, {
         width: '500px',
         data: { item: itemSelected, customize: itemSelected.customize }
       });
       customizeRef.afterClosed().subscribe(customizedValue => {
-        this.cartItem.filter((data) => {
-          if (customizedValue.name === data.name && customizedValue.selectedOptions === data.customized_options) {
-            console.log("inisde if Condition");
-            data.quantity++;
-          }
-          else {
-            console.log("in else condition");
-            const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-            this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + customizedValue.quantity + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
-          }
-        })
-      }
-      )
+        const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + customizedValue.quantity + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
+
+      })
     }
     else {
       console.log("in outer else")
