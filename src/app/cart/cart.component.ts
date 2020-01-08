@@ -18,6 +18,7 @@ export class CartComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['cartItem'].currentValue != changes['cartItem'].previousValue) {
+      console.log("change detected");
       this.subtotalPrice = 0;
       this.cartItem.cartItem.forEach(data => {
         this.subtotalPrice += parseInt(data.customized_price);

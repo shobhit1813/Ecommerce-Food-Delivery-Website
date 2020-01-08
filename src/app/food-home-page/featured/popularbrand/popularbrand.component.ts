@@ -17,6 +17,8 @@ export class PopularbrandComponent implements OnInit {
   cartItem: any[];
   noOfItems: number;
   isRestaurant: boolean = true;
+  isAlreadyInCart: boolean;
+  indexItemSelected: number;
   constructor(private service: FoodServiceService, private _customizeDialog: MatDialog, private _bottomSheet: MatBottomSheet) { }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class PopularbrandComponent implements OnInit {
         this.popularBrandList = data.list;
         this.noOfItems = this.popularBrandList.length;
         this.isCartNeeded = true;
+        this.isAlreadyInCart = false;
       }
     })
 
@@ -48,9 +51,10 @@ export class PopularbrandComponent implements OnInit {
   repeatLastOrder(itemSelected) {
     this.cartItem.filter((data, index) => {
       if (data.name === itemSelected.name) {
-        console.log("the item selected is ", itemSelected.quantity);
-        itemSelected.quantity++;
-        return this.cartItem.push(this.cartItem[index]);
+        console.log("data ",data);
+        data.quantity = parseInt(data.quantity)+1;
+        data.customized_price = data.customized_price * data.quantity;
+        // return this.cartItem.push(this.cartItem[index]);
       }
     })
     return this.cartItem;
@@ -64,9 +68,22 @@ export class PopularbrandComponent implements OnInit {
         data: { item: itemSelected, customize: itemSelected.customize }
       });
       customizeRef.afterClosed().subscribe(customizedValue => {
-        const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
-        this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + customizedValue.quantity + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
-
+        itemSelected.quantity = parseInt(itemSelected.quantity) + 1;
+        this.cartItem.forEach((item,index) => {
+          if (item.name === customizedValue.name && item.customized_options === customizedValue.selectedOptions) {
+            this.isAlreadyInCart = true;
+            this.indexItemSelected = index;
+          }
+        })
+        if (this.isAlreadyInCart) {
+          itemSelected.quantity = parseInt(itemSelected.quantity) + 1;
+          this.cartItem[this.indexItemSelected].customized_price = this.cartItem[this.indexItemSelected].customized_price * itemSelected.quantity;
+          this.isAlreadyInCart = false;
+        }
+        else {
+          const customized_price = parseInt(itemSelected.price) + parseInt(customizedValue.total_price);
+          this.cartItem.push(JSON.parse('{"name":"' + customizedValue.name + '","customized_price":"' + customized_price + '","quantity":"' + customizedValue.quantity + '","customized_options":"' + customizedValue.selectedOptions + '"}'));
+        }
       })
     }
     else {
